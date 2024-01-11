@@ -1,0 +1,43 @@
+{% extends 'accounts/layouts/main.html'%}
+
+{% block title %}
+  BLOGS
+{% endblock title %}
+
+{% block content %}
+<table style="border-collapse: collapse; width: 100%;">
+    <thead>
+        <tr style="background-color: #f2f2f2;">
+            <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;">Title</td>
+            <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;">Description</td>
+            <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;">Category Name</td>
+            <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;">View</td>
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for blog in form1 %}
+        
+        
+            <tr style="border: 1px solid #dddddd;">
+                
+                <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;">{{ blog.title }}</td>
+                <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;">{{ blog.description }}</td>
+                <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;">{{ blog.category.name }}</td>
+                <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;"><a href="{{ blog.id }}">View</a></td>
+               
+            </tr>
+        
+
+        {% endfor %}
+    </tbody>
+</table>
+
+<form action="" method="POST">
+{% csrf_token %}
+{{form.as_p}}
+<button type="submit">ADD BLOG</button>
+</form>
+
+
+{% endblock content %}

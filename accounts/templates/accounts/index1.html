@@ -1,0 +1,29 @@
+{% extends 'accounts/layouts/main.html'%}
+
+{% block title %}
+  BLOGS
+{% endblock title %}
+
+{% block content %}
+<table style="border-collapse: collapse; width: 100%;">
+    <thead>
+        <tr style="background-color: #f2f2f2;">
+            <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;">Title</td>
+            <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;">Description</td>
+            <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;">Category Name</td>
+        </tr>
+    </thead>
+
+    <tbody>
+       
+            <tr style="border: 1px solid #dddddd;">
+                <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;">{{ form.title }}</td>
+                <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;">{{ form.description }}</td>
+                <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;">{{ form.category.name }}</td>
+            </tr>
+      
+    </tbody>
+</table>
+<h1 style="text-align:centre;border: 20px solid #dddddd;">created at:<div style="text-align:centre; padding:auto;">{{ form.created_at}}</div></h1>
+
+{% endblock content %}

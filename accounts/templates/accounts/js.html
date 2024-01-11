@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+            JAVASCRIPT
+    </title>
+</head>
+<body>
+
+    
+</body>
+<script>
+const delayedColorChange=
+(color, delay) => {
+return new Promise ((resolve, reject) => {
+setTimeout(() => {
+document.body.style.backgroundColor=color;
+
+
+resolve();
+}, delay)
+})
+}
+
+
+
+
+    const todos=[];
+    let input = -100
+    document.body.style.backgroundColor='white';
+    input = prompt("Enter ur todos");
+    console.log(input)
+    while(input !== '-1' && input !== "quit"&&input){
+        todos.push(input);
+        input = prompt("Enter ur todos");
+        console.log(input);
+        
+    }
+    console.log("Entered")
+
+    delayedColorChange('red', 1000)
+.then (() => delayedColorChange ('orange', 1000))
+.then(() => delayedColorChange('yellow', 1000))
+.then(() => delayedColorChange('green', 1000))
+.then(() => delayedColorChange('blue', 1000))
+.then(() => delayedColorChange('indigo', 1000))
+.then(() => delayedColorChange('violet', 1000))
+.then(() => delayedColorChange('white', 1000));
+    
+
+    const movies=[
+    {
+        title:"rrr",
+        score:100
+    },
+    {
+        title:"ruthvik",
+        score:1000
+    },
+    {
+        title:"Movies",
+        score:1
+    }
+    ]
+    document.write(`
+    <ul>${todos.map((item) =>`<li>${item}</li>`).join('')}</ul>
+    <h1>Movies</h1>
+    <ul>${movies.map((item) =>`<li>${item.title} -- ${item.score} </li>`).join('')}</ul>
+    
+    `)
+    
+
+
+
+
+</script>
+</html>
